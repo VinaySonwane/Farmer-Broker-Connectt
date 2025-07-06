@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "rootDirs": ["src", "custom-types.d.ts"],
+    "outDir": "dist",
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "types": ["node"]
+  },
+  "include": ["src"]
+}
