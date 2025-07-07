@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import { PrimaryButton } from "../utility/ButtonsAll";
 import { useRouter } from "next/navigation";
 
@@ -68,8 +68,7 @@ const FarmerSign = () => {
 
       // console.log("User:", user);
     } catch (err: unknown) {
-      const errorMsg =
-        err?.response?.data?.message || "Login failed. Try again.";
+      const errorMsg = "Login failed. Try again.";
       toast.error(errorMsg);
     } finally {
       setloading(false);
