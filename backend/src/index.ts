@@ -121,8 +121,18 @@ import messageRoutes from "./routes/messageRoutes.js";
 import ratingRoutes from "./routes/ratingRoutes.js";
 import dealRoutes from "./routes/dealRoutes.js";
 
+const allowedOrigins = [
+  "http://localhost:3000", // for development
+  "https://farmer-broker-connectt-j5ig.vercel.app", // your Vercel frontend domain
+];
+
 // CORS
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -138,7 +148,7 @@ app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 // ⚡️ Socket.IO Setup
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000", // 👈 frontend
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -177,7 +187,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-   // console.log("❌ Socket disconnected:", socket.id);
+    // console.log("❌ Socket disconnected:", socket.id);
   });
 });
 
