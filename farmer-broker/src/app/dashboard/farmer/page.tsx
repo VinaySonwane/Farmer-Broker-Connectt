@@ -11,16 +11,7 @@ import { MdDelete } from "react-icons/md";
 import EditVegetableModal from "@/components/utility/EditVegetableModal";
 import baseUrl from "@/config/baseURL";
 
-interface Vegetable {
-  _id: string;
-  vegetableName: string;
-  expectedPrice: number;
-  quantity: number;
-  imageUrl: string;
-  createdAt: string;
-  unit: string;
-  status: "active" | "sold" | "cancelled";
-}
+import { Vegetable } from "@/components/types/vegetable";
 
 export default function FarmerDashboardPage() {
   const { id: farmerId } = useSelector((state: RootState) => state.user);

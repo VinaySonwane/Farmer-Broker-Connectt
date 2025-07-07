@@ -2,27 +2,36 @@
 
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState, useEffect } from "react";
+import { Vegetable } from "@/components/types/vegetable";
 
 interface EditVegetableModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSave: (data: {
-    _id: string;
-    vegetableName: string;
-    expectedPrice: number;
-    quantity: number;
-    imageUrl: string;
-    createdAt: string;
-  }) => void;
-  initialData: {
-    _id: string;
-    vegetableName: string;
-    expectedPrice: number;
-    quantity: number;
-    imageUrl: string;
-    createdAt: string;
-  };
+  onSave: (data: Vegetable) => void;
+  initialData: Vegetable;
 }
+
+// interface EditVegetableModalProps {
+//   isOpen: boolean;
+//   onClose: () => void;
+
+//   onSave: (data: {
+//     _id: string;
+//     vegetableName: string;
+//     expectedPrice: number;
+//     quantity: number;
+//     imageUrl: string;
+//     createdAt: string;
+//   }) => void;
+//   initialData: {
+//     _id: string;
+//     vegetableName: string;
+//     expectedPrice: number;
+//     quantity: number;
+//     imageUrl: string;
+//     createdAt: string;
+//   };
+// }
 
 export default function EditVegetableModal({
   isOpen,
