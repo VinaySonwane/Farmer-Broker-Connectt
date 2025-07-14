@@ -30,9 +30,9 @@ export default function ContactList({
   const filteredContacts = contacts.filter((contact) =>
     contact.fullname.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
+  //<div className="w-1/3 border-r p-4 bg-green-50 overflow-y-auto">
   return (
-    <div className="w-1/3 border-r p-4 bg-green-50 overflow-y-auto">
+    <div className="w-4/5 md:w-1/3 border-r p-4 bg-green-50 overflow-y-auto">
       <h2 className="text-lg font-bold text-green-800 mb-4">Chats</h2>
 
       <input
@@ -62,53 +62,3 @@ export default function ContactList({
     </div>
   );
 }
-
-// // src/components/chat/ContactList.tsx
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-
-// interface ContactListProps {
-//   userId: string;
-//   role: string;
-//   socket: any;
-//   onSelectContact: (contact: any) => void;
-// }
-
-// export default function ContactList({
-//   userId,
-//   role,
-//   onSelectContact,
-// }: ContactListProps) {
-//   const [contacts, setContacts] = useState<any[]>([]);
-
-//   useEffect(() => {
-//     const fetchContacts = async () => {
-//       const endpoint = role === "farmer" ? "brokers" : "farmers";
-//       const res = await axios.get(
-//         `http://localhost:8000/api/users/${endpoint}`
-//       );
-//       setContacts(res.data);
-//     };
-//     fetchContacts();
-//   }, [role]);
-
-//   return (
-//     <div className="w-1/3 border-r p-4 overflow-y-auto">
-//       <h2 className="text-lg font-bold mb-4 text-black">Chats</h2>
-//       {contacts.map((contact) => (
-//         <div
-//           key={contact._id}
-//           className="p-2 border-b hover:bg-gray-100 cursor-pointer"
-//           onClick={() => onSelectContact(contact)}
-//         >
-//           <p className="font-light md:font-bold text-black">
-//             {contact.fullname}
-//           </p>
-//           <p className="text-sm text-gray-500">
-//             {contact.phone || contact.email}
-//           </p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }

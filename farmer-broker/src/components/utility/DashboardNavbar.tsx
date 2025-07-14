@@ -40,7 +40,7 @@ export default function DashboardNavbar({
           className="flex items-center gap-2 hover:text-green-700 font-semibold transition bg-black px-5 py-3 rounded-full"
           onClick={() => router.push("/")}
         >
-          <IoIosHome className="text-2xl  text-white" />
+          <IoIosHome className="text-2xl text-white" />
           <span className="text-lg text-white">Home</span>
         </button>
       </div>
