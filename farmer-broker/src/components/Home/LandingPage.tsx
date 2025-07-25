@@ -73,24 +73,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="py-12 bg-white px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-          {[
-            { label: "Farmers", value: "1,200+" },
-            { label: "Brokers", value: "450+" },
-            { label: "Daily Offers", value: "3,000+" },
-          ].map((stat, index) => (
-            <div key={index} className="p-6 bg-green-50 rounded-lg shadow">
-              <div className="text-3xl font-bold text-green-800">
-                {stat.value}
-              </div>
-              <p className="mt-2 text-gray-700">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* FOOTER */}
       <footer className="bg-green-900 text-white text-center py-4 text-sm">
         © {new Date().getFullYear()} FarmConnect. All rights reserved.
